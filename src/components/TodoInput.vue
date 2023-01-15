@@ -18,12 +18,17 @@
       methods: {
         addTodo() {
           if (this.newTodoItme !== "") {
+
+
+
+            console.log(11)
+            
             let value = this.newTodoItem && this.newTodoItem.trim();
             localStorage.setItem(value, value);
             this.celarInput();
           }
         },
-        clearInput() {
+        celarInput() {
           this.newTodoItme = '';
         }  
       }

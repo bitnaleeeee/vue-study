@@ -17,14 +17,9 @@
       },
       methods: {
         addTodo() {
-          if (this.newTodoItme !== "") {
-
-
-
-            console.log(11)
-            
+          if (this.newTodoItme !== "") {            
             let value = this.newTodoItem && this.newTodoItem.trim();
-            localStorage.setItem(value, value);
+            this.$emit('addTodo', value);
             this.celarInput();
           }
         },

@@ -21,9 +21,10 @@ export default {
       todoItems: []
     }
   },
+  
  created() {
         if (localStorage.length > 0) {
-          for (let i=0; i < localStorage.length; i++) {
+          for (let i = 0; i < localStorage.length; i++) {
             this.todoItems.push(localStorage.key(i));
           }
         }
@@ -32,18 +33,22 @@ export default {
     addTodo(todoItem) {
       localStorage.setItem(todoItem, todoItem);
       this.todoItems.push(todoItem);
-    },
-
+    }
+  },
     clearAll() {
       localStorage.clear();
       this.todoItems = [];
-    }
-  },
+    },
+
 
     removeTodo(todoItem, index) {
+
+
+      console.log(11)
       localStorage.removeItem(todoItem);
       this.todoItems.splice(index, 1);
-    },
+},
+
   components: {
     'TodoHeader' : TodoHeader,
     'TodoInput' : TodoInput,

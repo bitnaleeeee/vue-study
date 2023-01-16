@@ -1,9 +1,10 @@
 <template>
   <div class="inputBox shadow">
-    <input type="text" v-model="newTodoItem" placeholder="Type what you have to do" v-on:keypup.enter="addTodo">
+    <input type="text" v-model="newTodoItem" placeholder="Type what you have to do" v-on:keyup.enter="addTodo">
     <span class="addContainer" v-on:click="addTodo">
       <i class="addBtn fas fa-plus" aria-hidden="true"></i>
       </span>
+
     </div>
 </template>
 
@@ -17,16 +18,17 @@
       },
       methods: {
         addTodo() {
-          if (this.newTodoItme !== "") {            
+          if (this.newTodoItem !== "") {            
             let value = this.newTodoItem && this.newTodoItem.trim();
             this.$emit('addTodo', value);
-            this.celarInput();
+            this.clearInput();
           }
         },
-        celarInput() {
-          this.newTodoItme = '';
+       clearInput() {
+          this.newTodoItem = "";
         }  
       }
+    
     }
 </script>
 
